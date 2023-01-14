@@ -1,273 +1,330 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text,SafeAreaView,Image, ScrollView ,
-  BackHandler, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text,SafeAreaView,Image, ScrollView , 
+  BackHandler, Dimensions ,TouchableOpacity} from 'react-native';
 import hh from '../assets/hh.png';
 import { useEffect } from 'react';
 
 const Popi = props  =>{
+
+  const deviceWidth = Dimensions.get('window').width;
   //backHandler
-  // const screen = 0;
-  // const backAction = () =>{
-  //   if (screen === 1){
+  const screen = 0;
+  const backAction = () =>{
+    if (screen === 1){
       
-  //     Alert.alert("warning", "Are you sure you want to exit?", [
-  //       {
-  //         text: "Cancel", 
-  //         onPress:()=> null, 
-  //         style: "cancel"
-  //       }, {
-  //         text:"Yes",
-  //         onPress:()=>BackHandler.exitApp()
-  //       }
-  //     ]);
-  //     return true;
-  //   }
-  //   else{
+      Alert.alert("warning", "Are you sure you want to exit?", [
+        {
+          text: "Cancel", 
+          onPress:()=> null, 
+          style: "cancel"
+        }, {
+          text:"Yes",
+          onPress:()=>BackHandler.exitApp()
+        }
+      ]);
+      return true;
+    }
+    else{
      
-  //   }
-  //   }
-  //   useEffect(()=>{
-  //     const backHandler = BackHandler.addEventListener(
-  //       "hardwareBackPress",
-  //       backAction
-  //     )
-  //   })
+    }
+    }
+    useEffect(()=>{
+      const backHandler = BackHandler.addEventListener(
+        "hardwareBackPress",
+        backAction
+      )
+    })
   return(
     <SafeAreaView style={styles.container}>
       <Image source={hh} style={styles.img} /> 
-      <Text style={styles.text2}> POPI Act, Privacy Policy  
+      <Text style={styles.text2}>Privacy Policy  
       </Text>
       <ScrollView showsVerticalScrollIndicator={false}>
       
-     <TouchableOpacity style={styles.card}>
+     <TouchableOpacity style={{
+        backgroundColor: "white",
+        padding: 18, 
+        borderRadius: 10,
+        marginBottom: 50,
+        width: deviceWidth -30,
+        height:12300,
+        
+    }}>
         <Text style={styles.text}>
           Last updated: December, 2022
         </Text>
-        
-        <Text style={styles.text}>Privacy Policy  
-==============
 
-Last updated: December 14, 2022
-
-
-<Text style={styles.text}>
+        <Text style={styles.text}>
 This Privacy Policy describes Our policies and procedures on the collection,
 use and disclosure of Your information when You use the Service and tells You
 about Your privacy rights and how the law protects You.
         </Text>
 
-
         <Text style={styles.text}>
-                 
-We use Your Personal data to provide and improve the Service. By using the
+        We use Your Personal data to provide and improve the Service. By using the
 Service, You agree to the collection and use of information in accordance with
 this Privacy Policy. This Privacy Policy has been created with the help of the
 [Free Privacy Policy Generator](https://www.freeprivacypolicy.com/free-
-privacy-policy-generator/).
+privacy-policy-generator/).      
+        </Text>
 
+        <Text style={styles.textHeader}>
+        Interpretation and Definitions  
+==============================
+        </Text>
+        <Text style={styles.text}>Interpretation
         </Text>
         
-
-Interpretation and Definitions  
-==============================
-
-Interpretation  
---------------
+        <Text style={styles.text}>
 
 The words of which the initial letter is capitalized have meanings defined
 under the following conditions. The following definitions shall have the same
 meaning regardless of whether they appear in singular or in plural.
+        </Text>
 
-Definitions  
------------
+        <Text style={styles.text}>
+        Definitions  
+        </Text>
+
+        <Text style={styles.text}>
 
 For the purposes of this Privacy Policy:
+{"\n"}
+{"\n"}
+* Account means a unique account created for You to access our Service or
+  parts of our Service.
+  {"\n"}
+  {"\n"}
+* Affiliate means an entity that controls, is controlled by or is under
+  common control with a party, where "control" means ownership of 50% or
+  more of the shares, equity interest or other securities entitled to vote
+  for election of directors or other managing authority.
+  {"\n"}
+  {"\n"}
+* Application means the software program provided by the Company downloaded
+  by You on any electronic device, named helping hands
+  {"\n"}
+  {"\n"}
+* Company (referred to as either "the Company", "We", "Us" or "Our" in this
+  Agreement) refers to helping hands.
+  {"\n"}
+  {"\n"}
+* Country refers to: South Africa
+{"\n"}
+{"\n"}
+* Device means any device that can access the Service such as a computer, a
+  cellphone or a digital tablet.
+  {"\n"}
+  {"\n"}
+* Personal Data is any information that relates to an identified or
+  identifiable individual.
+  {"\n"}
+  {"\n"}
+* Service refers to the Application.
+{"\n"}
+{"\n"}
+* Service Provider means any natural or legal person who processes the data
+  on behalf of the Company. It refers to third-party companies or
+  individuals employed by the Company to facilitate the Service, to provide
+  the Service on behalf of the Company, to perform services related to the
+  Service or to assist the Company in analyzing how the Service is used.
+  {"\n"}
+  {"\n"}
+* Third-party Social Media Service refers to any website or any social
+  network website through which a User can log in or create an account to
+  use the Service.
+  {"\n"}
+  {"\n"}
+* Usage Data refers to data collected automatically, either generated by the
+  use of the Service or from the Service infrastructure itself (for example,
+  the duration of a page visit).
+  {"\n"}
+  {"\n"}
+* You means the individual accessing or using the Service, or the company,
+  or other legal entity on behalf of which such individual is accessing or
+  using the Service, as applicable.
+        </Text>
 
-  * Account means a unique account created for You to access our Service or
-    parts of our Service.
+        <Text style={styles.textHeader}>
+        Collecting and Using Your Personal Data  
+=================================
+        </Text>
 
-  * Affiliate means an entity that controls, is controlled by or is under
-    common control with a party, where "control" means ownership of 50% or
-    more of the shares, equity interest or other securities entitled to vote
-    for election of directors or other managing authority.
+        <Text style={styles.text}>
+        Personal Data
+        </Text>
 
-  * Application means the software program provided by the Company downloaded
-    by You on any electronic device, named helping hands
+        <Text style={styles.text}>
 
-  * Company (referred to as either "the Company", "We", "Us" or "Our" in this
-    Agreement) refers to helping hands.
-
-  * Country refers to: South Africa
-
-  * Device means any device that can access the Service such as a computer, a
-    cellphone or a digital tablet.
-
-  * Personal Data is any information that relates to an identified or
-    identifiable individual.
-
-  * Service refers to the Application.
-
-  * Service Provider means any natural or legal person who processes the data
-    on behalf of the Company. It refers to third-party companies or
-    individuals employed by the Company to facilitate the Service, to provide
-    the Service on behalf of the Company, to perform services related to the
-    Service or to assist the Company in analyzing how the Service is used.
-
-  * Third-party Social Media Service refers to any website or any social
-    network website through which a User can log in or create an account to
-    use the Service.
-
-  * Usage Data refers to data collected automatically, either generated by the
-    use of the Service or from the Service infrastructure itself (for example,
-    the duration of a page visit).
-
-  * You means the individual accessing or using the Service, or the company,
-    or other legal entity on behalf of which such individual is accessing or
-    using the Service, as applicable.
-
-
-Collecting and Using Your Personal Data  
-=======================================
-
-Types of Data Collected  
------------------------
-
-Personal Data  
-~~~~~~~~~~~~~
-
-While using Our Service, We may ask You to provide Us with certain personally
+        While using Our Service, We may ask You to provide Us with certain personally
 identifiable information that can be used to contact or identify You.
 Personally identifiable information may include, but is not limited to:
-
+  {"\n"}
+  {"\n"}
   * Email address
-
+  {"\n"}
+  {"\n"}
   * First name and last name
-
+  {"\n"}
+  {"\n"}
   * Phone number
-
+  {"\n"}
+  {"\n"}
   * Address, State, Province, ZIP/Postal code, City
-
+  {"\n"}
+  {"\n"}
   * Usage Data
+        </Text>
 
+        <Text style={styles.text}>
+        Usage Data  
+        </Text>
 
-Usage Data  
-~~~~~~~~~~
-
-Usage Data is collected automatically when using the Service.
-
+        <Text style={styles.text}>
+        Usage Data is collected automatically when using the Service.
+        {"\n"}
+  {"\n"}
 Usage Data may include information such as Your Device's Internet Protocol
 address (e.g. IP address), browser type, browser version, the pages of our
 Service that You visit, the time and date of Your visit, the time spent on
 those pages, unique device identifiers and other diagnostic data.
+        </Text>
 
-When You access the Service by or through a mobile device, We may collect
+        <Text style={styles.text}>
+        When You access the Service by or through a mobile device, We may collect
 certain information automatically, including, but not limited to, the type of
 mobile device You use, Your mobile device unique ID, the IP address of Your
 mobile device, Your mobile operating system, the type of mobile Internet
 browser You use, unique device identifiers and other diagnostic data.
+        </Text>
 
-We may also collect information that Your browser sends whenever You visit our
+        <Text style={styles.text}>
+        We may also collect information that Your browser sends whenever You visit our
 Service or when You access the Service by or through a mobile device.
+        </Text>
 
-Information from Third-Party Social Media Services  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The Company allows You to create an account and log in to use the Service
+        <Text style={styles.text}>
+        Information from Third-Party Social Media Services
+        </Text>
+        <Text style={styles.text}>
+        The Company allows You to create an account and log in to use the Service
 through the following Third-party Social Media Services:
-
+  {"\n"}
+  {"\n"}
   * Google
+  {"\n"}
   * Facebook
+  {"\n"}
   * Twitter
+  {"\n"}
   * LinkedIn
-
-If You decide to register through or otherwise grant us access to a Third-
+        </Text>
+        <Text style={styles.text}>
+        If You decide to register through or otherwise grant us access to a Third-
 Party Social Media Service, We may collect Personal data that is already
 associated with Your Third-Party Social Media Service's account, such as Your
 name, Your email address, Your activities or Your contact list associated with
 that account.
-
-You may also have the option of sharing additional information with the
+        </Text>
+        <Text style={styles.text}>
+        You may also have the option of sharing additional information with the
 Company through Your Third-Party Social Media Service's account. If You choose
 to provide such information and Personal Data, during registration or
 otherwise, You are giving the Company permission to use, share, and store it
 in a manner consistent with this Privacy Policy.
-
-Information Collected while Using the Application  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        </Text>
+        <Text style={styles.text}>
+        Information Collected while Using the Application
+        </Text>
+        <Text style={styles.text}>
 
 While using Our Application, in order to provide features of Our Application,
 We may collect, with Your prior permission:
-
-  * Information regarding your location
-
-We use this information to provide features of Our Service, to improve and
+  {"\n"}
+  {"\n"}
+* Information regarding your location
+        </Text>
+        <Text style={styles.text}>
+        We use this information to provide features of Our Service, to improve and
 customize Our Service. The information may be uploaded to the Company's
 servers and/or a Service Provider's server or it may be simply stored on Your
 device.
-
+  {"\n"}
+  {"\n"}
 You can enable or disable access to this information at any time, through Your
 Device settings.
-
-Use of Your Personal Data  
--------------------------
-
-The Company may use Personal Data for the following purposes:
-
-  * To provide and maintain our Service , including to monitor the usage of
-    our Service.
-
-  * To manage Your Account: to manage Your registration as a user of the
-    Service. The Personal Data You provide can give You access to different
-    functionalities of the Service that are available to You as a registered
-    user.
-
-  * For the performance of a contract: the development, compliance and
-    undertaking of the purchase contract for the products, items or services
-    You have purchased or of any other contract with Us through the Service.
-
-  * To contact You: To contact You by email, telephone calls, SMS, or other
-    equivalent forms of electronic communication, such as a mobile
-    application's push notifications regarding updates or informative
-    communications related to the functionalities, products or contracted
-    services, including the security updates, when necessary or reasonable for
-    their implementation.
-
-  * To provide You with news, special offers and general information about
-    other goods, services and events which we offer that are similar to those
-    that you have already purchased or enquired about unless You have opted
-    not to receive such information.
-
-  * To manage Your requests: To attend and manage Your requests to Us.
-
-  * For business transfers: We may use Your information to evaluate or conduct
-    a merger, divestiture, restructuring, reorganization, dissolution, or
-    other sale or transfer of some or all of Our assets, whether as a going
-    concern or as part of bankruptcy, liquidation, or similar proceeding, in
-    which Personal Data held by Us about our Service users is among the assets
-    transferred.
-
-  * For other purposes : We may use Your information for other purposes, such
-    as data analysis, identifying usage trends, determining the effectiveness
-    of our promotional campaigns and to evaluate and improve our Service,
-    products, services, marketing and your experience.
-
-
-We may share Your personal information in the following situations:
-
+        </Text>
+        <Text style={styles.text}>Use of Your Personal Data</Text>
+        <Text style={styles.text}>
+        The Company may use Personal Data for the following purposes:
+  {"\n"}
+  {"\n"}
+* To provide and maintain our Service , including to monitor the usage of
+  our Service.
+  {"\n"}
+  {"\n"}
+* To manage Your Account: to manage Your registration as a user of the
+  Service. The Personal Data You provide can give You access to different
+  functionalities of the Service that are available to You as a registered
+  user.
+  {"\n"}
+  {"\n"}
+* For the performance of a contract: the development, compliance and
+  undertaking of the purchase contract for the products, items or services
+  You have purchased or of any other contract with Us through the Service.
+  {"\n"}
+  {"\n"}
+* To contact You: To contact You by email, telephone calls, SMS, or other
+  equivalent forms of electronic communication, such as a mobile
+  application's push notifications regarding updates or informative
+  communications related to the functionalities, products or contracted
+  services, including the security updates, when necessary or reasonable for
+  their implementation.
+  {"\n"}
+  {"\n"}
+* To provide You with news, special offers and general information about
+  other goods, services and events which we offer that are similar to those
+  that you have already purchased or enquired about unless You have opted
+  not to receive such information.
+  {"\n"}
+  {"\n"}
+* To manage Your requests: To attend and manage Your requests to Us.
+{"\n"}
+  {"\n"}
+* For business transfers: We may use Your information to evaluate or conduct
+  a merger, divestiture, restructuring, reorganization, dissolution, or
+  other sale or transfer of some or all of Our assets, whether as a going
+  concern or as part of bankruptcy, liquidation, or similar proceeding, in
+  which Personal Data held by Us about our Service users is among the assets
+  transferred.
+  {"\n"}
+  {"\n"}
+* For other purposes : We may use Your information for other purposes, such
+  as data analysis, identifying usage trends, determining the effectiveness
+  of our promotional campaigns and to evaluate and improve our Service,
+  products, services, marketing and your experience.
+        </Text>
+        <Text style={styles.text}>We may share Your personal information in the following situations:
+        </Text>
+        <Text style={styles.text}>
   * With Service Providers: We may share Your personal information with
     Service Providers to monitor and analyze the use of our Service, to
     contact You.
+    {"\n"}
   * For business transfers: We may share or transfer Your personal information
     in connection with, or during negotiations of, any merger, sale of Company
     assets, financing, or acquisition of all or a portion of Our business to
     another company.
+    {"\n"}
   * With Affiliates: We may share Your information with Our affiliates, in
     which case we will require those affiliates to honor this Privacy Policy.
     Affiliates include Our parent company and any other subsidiaries, joint
     venture partners or other companies that We control or that are under
     common control with Us.
+    {"\n"}
   * With business partners: We may share Your information with Our business
     partners to offer You certain products, services or promotions.
+    {"\n"}
   * With other users: when You share personal information or otherwise
     interact in the public areas with other users, such information may be
     viewed by all users and may be publicly distributed outside. If You
@@ -276,102 +333,101 @@ We may share Your personal information in the following situations:
     Your name, profile, pictures and description of Your activity. Similarly,
     other users will be able to view descriptions of Your activity,
     communicate with You and view Your profile.
+    {"\n"}
   * With Your consent : We may disclose Your personal information for any
-    other purpose with Your consent.
-
-Retention of Your Personal Data  
--------------------------------
-
+    other purpose with Your consent.</Text>
+        <Text style={styles.text}>Retention of Your Personal Data </Text>
+        <Text style={styles.text}>
 The Company will retain Your Personal Data only for as long as is necessary
 for the purposes set out in this Privacy Policy. We will retain and use Your
 Personal Data to the extent necessary to comply with our legal obligations
 (for example, if we are required to retain your data to comply with applicable
-laws), resolve disputes, and enforce our legal agreements and policies.
-
-The Company will also retain Usage Data for internal analysis purposes. Usage
+laws), resolve disputes, and enforce our legal agreements and policies.</Text>
+        <Text style={styles.text}>The Company will also retain Usage Data for internal analysis purposes. Usage
 Data is generally retained for a shorter period of time, except when this data
 is used to strengthen the security or to improve the functionality of Our
 Service, or We are legally obligated to retain this data for longer time
 periods.
-
-Transfer of Your Personal Data  
-------------------------------
-
-Your information, including Personal Data, is processed at the Company's
+</Text>
+        <Text style={styles.text}>Transfer of Your Personal Data  </Text>
+        <Text style={styles.text}>Your information, including Personal Data, is processed at the Company's
 operating offices and in any other places where the parties involved in the
 processing are located. It means that this information may be transferred to —
 and maintained on — computers located outside of Your state, province, country
 or other governmental jurisdiction where the data protection laws may differ
-than those from Your jurisdiction.
-
+than those from Your jurisdiction.</Text>
+        <Text style={styles.text}>
 Your consent to this Privacy Policy followed by Your submission of such
-information represents Your agreement to that transfer.
-
-The Company will take all steps reasonably necessary to ensure that Your data
+information represents Your agreement to that transfer.</Text>
+        <Text style={styles.text}>The Company will take all steps reasonably necessary to ensure that Your data
 is treated securely and in accordance with this Privacy Policy and no transfer
 of Your Personal Data will take place to an organization or a country unless
 there are adequate controls in place including the security of Your data and
-other personal information.
-
-Delete Your Personal Data  
--------------------------
-
-You have the right to delete or request that We assist in deleting the
+other personal information.</Text>
+        <Text style={styles.text}>Delete Your Personal Data </Text>
+        <Text style={styles.text}>
+        You have the right to delete or request that We assist in deleting the
 Personal Data that We have collected about You.
-
-Our Service may give You the ability to delete certain information about You
+        </Text>
+        <Text style={styles.text}>
+        Our Service may give You the ability to delete certain information about You
 from within the Service.
-
-You may update, amend, or delete Your information at any time by signing in to
+        </Text>
+        <Text style={styles.text}>
+        You may update, amend, or delete Your information at any time by signing in to
 Your Account, if you have one, and visiting the account settings section that
 allows you to manage Your personal information. You may also contact Us to
 request access to, correct, or delete any personal information that You have
 provided to Us.
-
-Please note, however, that We may need to retain certain information when we
-have a legal obligation or lawful basis to do so.
-
+        </Text>
+        <Text style={styles.text}>Please note, however, that We may need to retain certain information when we
+have a legal obligation or lawful basis to do so.</Text>
+        <Text style={styles.textHeader}>
 Disclosure of Your Personal Data  
---------------------------------
-
-Business Transactions  
-~~~~~~~~~~~~~~~~~~~~~
-
+=============================
+</Text>
+        <Text style={styles.text}>
+        Business Transactions  
+        </Text>
+        <Text style={styles.text}>
 If the Company is involved in a merger, acquisition or asset sale, Your
 Personal Data may be transferred. We will provide notice before Your Personal
 Data is transferred and becomes subject to a different Privacy Policy.
-
-Law enforcement  
-~~~~~~~~~~~~~~~
-
-Under certain circumstances, the Company may be required to disclose Your
+</Text>
+        <Text style={styles.text}>Law enforcement</Text>
+        <Text style={styles.text}>Under certain circumstances, the Company may be required to disclose Your
 Personal Data if required to do so by law or in response to valid requests by
-public authorities (e.g. a court or a government agency).
-
-Other legal requirements  
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-The Company may disclose Your Personal Data in the good faith belief that such
+public authorities (e.g. a court or a government agency).</Text>
+        <Text style={styles.text}>Other legal requirements  </Text>
+        <Text style={styles.text}>The Company may disclose Your Personal Data in the good faith belief that such
 action is necessary to:
-
+{"\n"}
+  {"\n"}
   * Comply with a legal obligation
+  {"\n"}
+  {"\n"}
   * Protect and defend the rights or property of the Company
+  {"\n"}
+  {"\n"}
   * Prevent or investigate possible wrongdoing in connection with the Service
+  {"\n"}
+  {"\n"}
   * Protect the personal safety of Users of the Service or the public
-  * Protect against legal liability
-
-Security of Your Personal Data  
-------------------------------
-
+  {"\n"}
+  {"\n"}
+  * Protect against legal liability</Text>
+        <Text style={styles.text}>
+        Security of Your Personal Data  
+        </Text>
+        <Text style={styles.text}>
 The security of Your Personal Data is important to Us, but remember that no
 method of transmission over the Internet, or method of electronic storage is
 100% secure. While We strive to use commercially acceptable means to protect
-Your Personal Data, We cannot guarantee its absolute security.
-
-Children's Privacy  
-==================
-
-Our Service does not address anyone under the age of 13. We do not knowingly
+Your Personal Data, We cannot guarantee its absolute security.</Text>
+        <Text style={styles.textHeader}>Children's Privacy  
+==================</Text>
+        <Text style={styles.text}>
+        Our Service does not address anyone under the age of 13. We do not knowingly
 collect personally identifiable information from anyone under the age of 13.
 If You are a parent or guardian and You are aware that Your child has provided
 Us with Personal Data, please contact Us. If We become aware that We have
@@ -379,43 +435,52 @@ collected Personal Data from anyone under the age of 13 without verification
 of parental consent, We take steps to remove that information from Our
 servers.
 
+        </Text>
+        <Text style={styles.text}>
+
 If We need to rely on consent as a legal basis for processing Your information
 and Your country requires consent from a parent, We may require Your parent's
 consent before We collect and use that information.
-
+        </Text>
+        <Text style={styles.textHeader}>
 Links to Other Websites  
-=======================
-
+=======================</Text>
+        <Text style={styles.text}>
 Our Service may contain links to other websites that are not operated by Us.
 If You click on a third party link, You will be directed to that third party's
 site. We strongly advise You to review the Privacy Policy of every site You
 visit.
-
+{"\n"}
+  {"\n"}
 We have no control over and assume no responsibility for the content, privacy
-policies or practices of any third party sites or services.
-
-Changes to this Privacy Policy  
-==============================
-
-We may update Our Privacy Policy from time to time. We will notify You of any
+policies or practices of any third party sites or services.</Text>
+        <Text style={styles.textHeader}>Changes to this Privacy Policy  
+==============================</Text>
+        <Text style={styles.text}>
+        We may update Our Privacy Policy from time to time. We will notify You of any
 changes by posting the new Privacy Policy on this page.
-
-We will let You know via email and/or a prominent notice on Our Service, prior
+        </Text>
+        <Text style={styles.text}>
+        We will let You know via email and/or a prominent notice on Our Service, prior
 to the change becoming effective and update the "Last updated" date at the top
 of this Privacy Policy.
-
-You are advised to review this Privacy Policy periodically for any changes.
+        </Text>
+        <Text style={styles.text}>You are advised to review this Privacy Policy periodically for any changes.
 Changes to this Privacy Policy are effective when they are posted on this
 page.
-
-Contact Us  
+</Text>
+        <Text style={styles.textHeader}>
+        Contact Us  
 ==========
-
-If you have any questions about this Privacy Policy, You can contact us:
-
-  * By email: alamadalambana@gmail.com
+        </Text>
+        <Text style={styles.text}>
+        If you have any questions about this Privacy Policy, You can contact us:
+        {"\n"}
+  {"\n"}
+* By email: alamadalambana@gmail.com
 
         </Text>
+     
      </TouchableOpacity>
       </ScrollView>
       <StatusBar style="auto" />
@@ -450,6 +515,11 @@ const styles = StyleSheet.create({
       paddingTop: 15,
       fontSize: 18
     }, 
+    textHeader: {
+      fontWeight: 'bold',
+      paddingTop: 15,
+      fontSize: 18
+    },
     text2: {
       color: 'white',
      fontWeight: 'bold',
@@ -457,15 +527,7 @@ const styles = StyleSheet.create({
      paddingBottom: 30,
      marginLeft: 100
     }, 
-    card: {
-        backgroundColor: "white",
-        padding: 18, 
-        borderRadius: 10,
-        marginBottom: 50,
-        width: 400,
-        height:10850,
-        
-    }
+    
 });
 
  export default Popi
